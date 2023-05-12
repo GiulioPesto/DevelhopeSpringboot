@@ -23,7 +23,7 @@ public class HelloController {
 class HelloController2 {
 	@GetMapping("/info")
 	public ResponseEntity<String> getInfo() {
-		return ResponseEntity.ok("200 OK!");
+		return new ResponseEntity(HttpStatusCode.valueOf(200));
 	}
 }
 @RestController
