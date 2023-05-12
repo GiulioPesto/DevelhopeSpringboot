@@ -25,16 +25,15 @@ class HelloController2 {
 	public ResponseEntity<String> getInfo() {
 		return ResponseEntity.ok("200 OK!");
 	}
-
-	@RestController
-	class HelloController3 {
-		@GetMapping("/random")
-		public ResponseEntity<String> random() {
-			boolean random = new Random().nextBoolean();
-			if(random) {
-				return ResponseEntity.ok("It's true");
-			}
-			return ResponseEntity.badRequest().body("It's false!");
+}
+@RestController
+class HelloController3 {
+	@GetMapping("/random")
+	public ResponseEntity<String> random() {
+		boolean random = new Random().nextBoolean();
+		if(random) {
+			return ResponseEntity.ok("It's true");
 		}
+		return ResponseEntity.badRequest().body("It's false!");
 	}
 }
