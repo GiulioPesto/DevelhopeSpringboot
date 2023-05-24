@@ -1,4 +1,4 @@
-package com.example.springboot.controller;
+package com.example.springboot.controller.ex_1;
 
 import com.mysql.cj.x.protobuf.Mysqlx;
 import org.springframework.http.HttpStatusCode;
