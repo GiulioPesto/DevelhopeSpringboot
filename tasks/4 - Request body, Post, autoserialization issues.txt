@@ -1,10 +1,10 @@
-Exercise 1: Create a PutMapping to add a new meal
+Exercise 1: Create a PostMapping to add a new meal
 
 1 - Create a new endpoint "/meal" using the @PostMapping annotation.
 3 - In the method, add a RequestBody for the new Meal object.
 4 - Add the new meal to the list of meals.
 
-Exercise 2: Create a PostMapping to update a meal by name
+Exercise 2: Create a Putmapping to update a meal by name
 
 1 - Create a new endpoint "/meal/{name}" using the @PutMapping annotation.
 2 - In the method, add a PathVariable for the name and a RequestBody for the updated Meal object.
