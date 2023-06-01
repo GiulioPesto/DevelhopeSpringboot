@@ -25,6 +25,10 @@ public class MealService {
     }
 
     public void addMeal(Meal meal) {
+        if(meal == null) throw new IllegalArgumentException("Meal cannot be null");
+        if(meal.getName() == null || meal.getName().isEmpty()) throw new IllegalArgumentException("Meal name cannot be empty");
+        if(meal.getPrice() <= 0) throw new IllegalArgumentException("Meal price cannot be empty");
+        if(meal.getDescription() == null || meal.getDescription().isEmpty()) throw new IllegalArgumentException("Meal description cannot be empty");
         mealDao.save(meal);
     }
 

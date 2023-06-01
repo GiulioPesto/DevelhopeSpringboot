@@ -1,6 +1,5 @@
 package com.example.springboot.controller.ex_3;
 
-import com.example.springboot.controller.ex_1.HelloController;
 import com.example.springboot.model.Meal;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +12,8 @@ import java.util.List;
 @RequestMapping("/ex_3")
 public class ex_3 {
 
-    private List<Meal> meals = new ArrayList<>(Arrays.asList(new Meal("Rare Florentine", "A fiorentì", 10.99, false),
+    private List<Meal> meals = new ArrayList<>(Arrays.asList(
+            new Meal("Rare Florentine", "A fiorentì", 10.99, false),
             new Meal("Wagyu", "Uagliò", 30, false),
             new Meal("Kangaroo Sausage", "A sasicc ro cangur", 40, false)));
 

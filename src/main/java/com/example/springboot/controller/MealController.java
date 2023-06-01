@@ -32,6 +32,16 @@ public class MealController {
         return ResponseEntity.ok(meal);
     }
 
+    @PutMapping("/put/meal")
+    public ResponseEntity<String> putMeal(@RequestBody Meal meal) {
+        try {
+            mealService.addMeal(meal);
+            return ResponseEntity.ok("Meal added successfully");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
     @DeleteMapping("/meal/{id}")
     public ResponseEntity<Meal> deleteMeal(@PathVariable long id) {
         mealService.deleteMeal(id);
