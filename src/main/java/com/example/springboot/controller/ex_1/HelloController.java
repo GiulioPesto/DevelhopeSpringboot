@@ -16,27 +16,22 @@ public class HelloController {
 	public String index() {
 		return "Hello World!";
 	}
+
 	@GetMapping("/greeting")
 	public ResponseEntity<String> greeting() {
 		return new ResponseEntity("Good Afternoon!", HttpStatusCode.valueOf(200));
 	}
-}
 
-@RestController
-class HelloController2 {
 	@GetMapping("/info")
 	public ResponseEntity getInfo() {
 		return new ResponseEntity(HttpStatusCode.valueOf(200));
 	}
-}
-@RestController
-class HelloController3 {
 	@GetMapping("/random")
-	public ResponseEntity random() {
-		boolean random = new Random().nextBoolean();
-		if(random) {
-			return new ResponseEntity("It's true", HttpStatusCode.valueOf(200));
+		public ResponseEntity random () {
+			boolean random = new Random().nextBoolean();
+			if (random) {
+				return new ResponseEntity("It's true", HttpStatusCode.valueOf(200));
+			}
+			return new ResponseEntity("It's false", HttpStatusCode.valueOf(400));
 		}
-		return new ResponseEntity("It's false", HttpStatusCode.valueOf(400));
 	}
-}
