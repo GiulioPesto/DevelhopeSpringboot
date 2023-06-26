@@ -18,6 +18,7 @@ import java.util.List;
 public class MealService {
     private MealDao mealDao;
     private Double MIN_SUMMER_TEMP = 20.0;
+    private Double MAX_WINTER_TEMP = 18.0;
 
     @Autowired
     public MealService(MealDao mealDao) {
@@ -48,8 +49,14 @@ public class MealService {
         Double currentTemperatureInCentigrade = getCurrentTemperatureInCentigrade();
 
         if (currentTemperatureInCentigrade < MIN_SUMMER_TEMP) return new ArrayList<>();
-
         return mealDao.findByIsSummerMeal(true);
+    }
+
+    public List<Meal> getWinterMeals() {
+        Double currentTemperatureInCentigrade = getCurrentTemperatureInCentigrade();
+
+        if(currentTemperatureInCentigrade < MIN_SUMMER_TEMP) return new ArrayList<>();
+        return mealDao.findByIsWinterMeal(true);
     }
 
     private Double getCurrentTemperatureInCentigrade() {
@@ -62,4 +69,11 @@ public class MealService {
             throw new RuntimeException(e);
         }
     }
+
+    public void test() {
+        mealDao.findByName("Xiaolongbao").forEach(System.out::println);
+        System.out.println();
+    }
 }
+
+

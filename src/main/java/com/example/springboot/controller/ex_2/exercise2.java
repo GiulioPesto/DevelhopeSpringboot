@@ -13,9 +13,9 @@ import java.util.List;
 public class exercise2 {
 
     public List<Meal> list = Arrays.asList(
-            new Meal("Rare Florentine", "A fiorentì", 10.99, false),
-            new Meal("Wagyu", "Uagliò", 30, false),
-            new Meal("Kangaroo Sausage", "A sasicc ro cangur", 40, false));
+            new Meal("Rare Florentine", "A fiorentì", 10.99, false, true),
+            new Meal("Wagyu", "Uagliò", 30, false, true),
+            new Meal("Kangaroo Sausage", "A sasicc ro cangur", 40, false, true));
 
     @GetMapping("/meals")
     public List<Meal> mealList() {

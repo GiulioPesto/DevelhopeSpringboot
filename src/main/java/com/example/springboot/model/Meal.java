@@ -10,22 +10,27 @@ public class Meal {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private static long idTot = 0;
-
+    private static long idTot = 1;
+    @Column
     private String name;
+    @Column
     private String description;
+    @Column
     private double price;
+    @Column
     private boolean isSummerMeal;
+    @Column boolean isWinterMeal;
 
     @OneToMany(mappedBy = "meal", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Ingredient> ingredients;
 
-    public Meal(String name, String description, double price, boolean isSummerMeal) {
+    public Meal(String name, String description, double price, boolean isSummerMeal, boolean isWinterMeal) {
         this.id = ++idTot;
         this.name = name;
         this.description = description;
         this.price = price;
         this.isSummerMeal = isSummerMeal;
+        this.isWinterMeal = isWinterMeal;
     }
 
     public Meal() {
